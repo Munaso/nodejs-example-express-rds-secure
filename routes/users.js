@@ -3,6 +3,8 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 
 const { Users } = require("../models");
+const checkLogin = require("../middlewares/checkLogin.js"); //유저아이디받기
+
 const crypto = require("crypto");
 
 // ✖︎ 응답 객체
@@ -13,11 +15,6 @@ class ApiResponse {
     this.data = data;
   }
 }
-
-/* GET users listing. */
-// router.get("/", function (req, res, next) {
-//   res.send("respond with a resource");
-// });
 
 router.post("/signup", async function (req, res, next) {
   const { email, password, nickname, age } = req.body;
@@ -154,6 +151,21 @@ router.post("/login", async (req, res) => {
   //   );
   //   return res.status(500).json(response);
   // }
+});
+
+// ◎  로그아웃 API
+router.post("/logout", checkLogin, async (req, res) => {
+  try {
+    res.clearCookie("Authorization");
+    const response = new ApiResponse(200, "로그아웃 성공");
+    return res.status(200).json(response);
+  } catch {
+    const response = new ApiResponse(
+      500,
+      "예상하지 못한 서버 문제가 발생했습니다."
+    );
+    return res.status(500).json(response);
+  }
 });
 
 module.exports = router;
