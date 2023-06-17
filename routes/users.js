@@ -15,9 +15,9 @@ class ApiResponse {
 }
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
-  res.send("respond with a resource");
-});
+// router.get("/", function (req, res, next) {
+//   res.send("respond with a resource");
+// });
 
 router.post("/signup", async function (req, res, next) {
   const { email, password, nickname, age } = req.body;
