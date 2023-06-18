@@ -1,5 +1,3 @@
-// require("dotenv").config();
-// const env = process.env;
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -25,7 +23,7 @@ app.use("/", indexRouter);
 // app.use("/users", usersRouter);
 
 app.get("/", (req, res) => {
-  res.status(200).send("godSaeng diary backend API!!!");
+  res.status(200).send("godSaeng diary backend API!!");
 });
 
 // catch 404 and forward to error handler
@@ -47,10 +45,10 @@ app.use(function (err, req, res, next) {
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-  host: process.env.RDS_HOSTNAME,
-  user: process.env.RDS_USERNAME,
-  password: process.env.RDS_PASSWORD,
-  port: process.env.RDS_PORT,
+  host: "awseb-e-bkzbetgqzn-stack-awsebrdsdatabase-cozic2hdcxgg.cgpmu40qmwlj.us-west-2.rds.amazonaws.com",
+  user: "root",
+  password: "poiu4321",
+  port: 3306,
 });
 
 connection.connect(function (err) {
