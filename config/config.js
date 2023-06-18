@@ -1,11 +1,11 @@
-require("dotenv").config();
-const env = process.env;
+// require("dotenv").config();
+// const env = process.env;
 
 const development = {
-  username: env.DB_USERNAME,
-  password: env.DB_PASSWORD,
-  database: env.DB_DATABASE,
-  host: env.DB_HOST,
+  username: process.env.RDS_USERNAME,
+  password: process.env.RDS_PASSWORD,
+  database: process.env.RDS_DB_NAME,
+  host: process.env.RDS_HOSTNAME,
   dialect: "mysql",
   timezone: "Asia/Seoul",
   dialectOptions: {
