@@ -44,22 +44,22 @@ app.use(function (err, req, res, next) {
 
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-  host: "awseb-e-bkzbetgqzn-stack-awsebrdsdatabase-cozic2hdcxgg.cgpmu40qmwlj.us-west-2.rds.amazonaws.com",
-  user: "root",
-  password: "poiu4321",
-  port: 3306,
-});
+// var connection = mysql.createConnection({
+//   host: "awseb-e-bkzbetgqzn-stack-awsebrdsdatabase-cozic2hdcxgg.cgpmu40qmwlj.us-west-2.rds.amazonaws.com",
+//   user: "root",
+//   password: "poiu4321",
+//   port: 3306,
+// });
 
-connection.connect(function (err) {
-  if (err) {
-    console.error("Database connection failed: " + err.stack);
-    return;
-  }
+// connection.connect(function (err) {
+//   if (err) {
+//     console.error("Database connection failed: " + err.stack);
+//     return;
+//   }
 
-  console.log("Connected to database.");
-});
+//   console.log("Connected to database.");
+// });
 
-connection.end();
+// connection.end();
 
 module.exports = app;
