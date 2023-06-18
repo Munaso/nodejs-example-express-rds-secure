@@ -45,10 +45,10 @@ app.use(function (err, req, res, next) {
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-  host: "awseb-e-bkzbetgqzn-stack-awsebrdsdatabase-cozic2hdcxgg.cgpmu40qmwlj.us-west-2.rds.amazonaws.com",
-  user: "root",
-  password: "poiu4321",
-  port: 3306,
+  host: process.env.RDS_HOSTNAME,
+  user: process.env.RDS_USERNAME,
+  password: process.env.RDS_PASSWORD,
+  port: process.env.RDS_PORT,
 });
 
 connection.connect(function (err) {
