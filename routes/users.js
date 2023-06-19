@@ -18,7 +18,7 @@ class ApiResponse {
 router.post("/signup", async (req, res, next) => {
   const { email, password, nickname } = req.body;
   try {
-    // 닉네임으로 중복가입 여부 확인
+    // 닉네임으로 중복가입 여부 확인.
 
     const isExistNick = await Users.findOne({
       where: { nickname: nickname },
