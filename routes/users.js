@@ -4,7 +4,6 @@ const { Users } = require("../models");
 const jwt = require("jsonwebtoken");
 const checkLogin = require("../middlewares/checkLogin.js"); //유저아이디받기
 const crypto = require("crypto");
-const XRegExp = require('xregexp');
 
 // ✖︎ 응답 객체
 class ApiResponse {
@@ -50,7 +49,7 @@ router.post("/signup", async (req, res, next) => {
       return;
     }
     // 닉네임 형식확인: 알파벳 대소문자, 숫자, 4~20자
-    const nickCheck = XRegExp('^([\\p{L}\\p{N}!@#$%^&*()\\-_=?/+]{1,8})$');
+    const nickCheck = /^[0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ_-]{4,20}$/;
     if (!nickCheck.test(nickname)) {
       const response = new ApiResponse(
         412,
@@ -176,3 +175,8 @@ router.post("/logout", async (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
+
