@@ -42,7 +42,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-var mysql = require("mysql");
+// var mysql = require("mysql");
 
 // var connection = mysql.createConnection({
 //   host: "awseb-e-bkzbetgqzn-stack-awsebrdsdatabase-cozic2hdcxgg.cgpmu40qmwlj.us-west-2.rds.amazonaws.com",
