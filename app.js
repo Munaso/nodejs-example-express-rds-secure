@@ -23,7 +23,7 @@ app.use("/", indexRouter);
 // app.use("/users", usersRouter);
 
 app.get("/", (req, res) => {
-  res.status(200).send("godSaeng diary backend API !");
+  res.status(200).send("godSaeng diary backend API !!");
 });
 
 // catch 404 and forward to error handler
