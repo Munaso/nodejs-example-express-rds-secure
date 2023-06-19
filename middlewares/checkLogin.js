@@ -23,7 +23,7 @@ module.exports = async (req, res, next) => {
     // const Authorization = req.header("Authorization"); //토큰을 헤더로 받는 경우
     //토큰이 있는지 확인
     if (!Authorization) {
-      const response = new ApiResponse(403, "로그인이 필요한 서비스입니다.");
+      const response = new ApiResponse(403, "로그인이 필요한 서비스입니다!!");
       return res.status(403).json(response);
     }
 
