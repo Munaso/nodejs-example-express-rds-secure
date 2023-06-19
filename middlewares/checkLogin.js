@@ -11,9 +11,16 @@ class ApiResponse {
 
 module.exports = async (req, res, next) => {
   try {
-    const { Authorization } = req.cookies; // 토큰을 쿠키로 받는경우
-    // const Authorization = req.header("Authorization"); //토큰을 헤더로 받는 경우
+    // const { Authorization } = req.cookies; // 토큰을 쿠키로 받는경우
+    const authorizationCookies = req.cookies.Authorization;
+    const authorizationHeaders = req.headers.Authorization;
+    const Authorization = authorizationCookies
+      ? authorizationCookies
+      : authorizationHeaders;
 
+    console.log('Authorization : ', Authorization);
+
+    // const Authorization = req.header("Authorization"); //토큰을 헤더로 받는 경우
     //토큰이 있는지 확인
     if (!Authorization) {
       const response = new ApiResponse(403, "로그인이 필요한 서비스입니다.");
@@ -21,8 +28,9 @@ module.exports = async (req, res, next) => {
     }
 
     const [authType, authToken] = Authorization.split(" ");
+    // console.log(Authorization, authType, authToken);
 
-    //authType === Bearer인지 확인
+    //authTyep === Bearer인지 확인
     if (authType !== "Bearer" || !authToken) {
       const response = new ApiResponse(403, "토큰 정보 오류");
       return res.status(403).json(response);
