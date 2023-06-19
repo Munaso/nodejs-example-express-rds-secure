@@ -2,10 +2,10 @@ require("dotenv").config();
 const env = process.env;
 
 const development = {
-  username: "root",
-  password: "poiu4321",
-  database: "ebdb",
-  host: "awseb-e-bkzbetgqzn-stack-awsebrdsdatabase-cozic2hdcxgg.cgpmu40qmwlj.us-west-2.rds.amazonaws.com",
+  username: env.DB_USERNAME,
+  password: env.DB_PASSWORD,
+  database: env.DB_DATABASE,
+  host: env.DB_HOST,
   dialect: "mysql",
   timezone: "Asia/Seoul",
   dialectOptions: {
