@@ -2,10 +2,10 @@ require("dotenv").config();
 const env = process.env;
 
 const development = {
-  username: env.RDS_USERNAME,
-  password: env.RDS_PASSWORD,
-  database: env.RDS_DB_NAME,
-  host: env.RDS_HOSTNAME,
+  username: "root",
+  password: "poiu4321",
+  database: "ebdb",
+  host: "awseb-e-bkzbetgqzn-stack-awsebrdsdatabase-cozic2hdcxgg.cgpmu40qmwlj.us-west-2.rds.amazonaws.com",
   dialect: "mysql",
   timezone: "Asia/Seoul",
   dialectOptions: {
