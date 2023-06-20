@@ -25,7 +25,8 @@ app.use(
       'https://go-getter.shop',
       'http://go-getter.shop',
       'http://localhost:3000',
-      'https://god-saeng-life-fe-test.vercel.app'
+      'https://god-saeng-life-fe-test.vercel.app',
+      'https://god-saeng-life-git-master-zadragon.vercel.app'
     ],
     credentials: true,
   })
