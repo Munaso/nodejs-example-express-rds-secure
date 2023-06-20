@@ -109,7 +109,7 @@ router.post("/signup", async (req, res, next) => {
 
 // ◎  로그인 API
 router.post("/login", async (req, res) => {
-  try {
+  // try {
     const { email, password } = req.body;
     const loginUser = await Users.findOne({
       where: { email },
@@ -150,13 +150,13 @@ router.post("/login", async (req, res) => {
       Authorization: `Bearer ${token}`,
     });
     return res.status(200).json(response);
-  } catch (error) {
-    const response = new ApiResponse(
-      500,
-      "예상하지 못한 서버 문제가 발생했습니다."
-    );
-    return res.status(500).json(response);
-  }
+  // } catch (error) {
+  //   const response = new ApiResponse(
+  //     500,
+  //     "예상하지 못한 서버 문제가 발생했습니다."
+  //   );
+  //   return res.status(500).json(response);
+  // }
 });
 
 // ◎  로그아웃 API
