@@ -25,6 +25,7 @@ app.use(
       'https://go-getter.shop',
       'http://go-getter.shop',
       'http://localhost:3000',
+      'https://god-saeng-life-fe-test.vercel.app'
     ],
     credentials: true,
   })
