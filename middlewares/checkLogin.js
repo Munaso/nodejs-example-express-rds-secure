@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
   try {
     // const { Authorization } = req.cookies; // 토큰을 쿠키로 받는경우
     const authorizationCookies = req.cookies.Authorization;
-    const authorizationHeaders = req.headers.Authorization;
+    const authorizationHeaders = req.header('Authorization');
     const Authorization = authorizationCookies
       ? authorizationCookies
       : authorizationHeaders;
