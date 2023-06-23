@@ -28,8 +28,8 @@ router.get('/main', checkLogin, async (req, res) => {
         order: [['createdAt', 'DESC']],
       });
 
-      
-      return res.json({ feeds });
+
+      return res.json({ feeds, "sdfs":"sdfsd" });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ error: '서버 오류입니다.' });
