@@ -27,6 +27,8 @@ router.get('/main', checkLogin, async (req, res) => {
         where: { UserId: user.userId },
         order: [['createdAt', 'DESC']],
       });
+
+      
       return res.json({ feeds });
     } catch (err) {
       console.error(err);
